@@ -1,0 +1,10 @@
+# Crear un programa registrar un usuario en el sistema y le de la bienvenida
+
+print("Registro del sistema")
+
+name = input("Indicar tus nombres: ")
+last_name = input("Indicar tus apellidos: ")
+number_phone = input("Indicar tu nomero de telefono: ")
+email = input("Indicar tu correo electronico: ")
+
+print(f'Hola {name} {last_name} tu numero de telefono es:{number_phone} y tu correo es:{email}')
