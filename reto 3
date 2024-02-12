@@ -1,1 +1,49 @@
+cantidad_usuarios = int(input("Ingrese la cantidad de nuevos usuarios que desea registrar: "))
+
+# Variables para almacenar los usuarios registrados y los identificadores
+usuarios = []
+identificadores = []
+
+for i in range(cantidad_usuarios):
+    print(f"\nRegistrando usuario #{i+1}")
+
+    name = input("Ingrese el nombre del usuario: ")
+    while len(name) < 5 or len(name) > 50:
+        print("El nombre debe tener una longitud mínima de 5 caracteres y máxima de 50.")
+        name = input("Ingrese el nombre del usuario nuevamente: ")
+
+    last_name = input("Ingrese los apellidos del usuario: ")
+    while len(last_name) < 5 or len(last_name) > 50:
+        print("Los apellidos deben tener una longitud mínima de 5 caracteres y máxima de 50.")
+        last_name = input("Ingrese los apellidos del usuario nuevamente: ")
+
+    phone_number = input("Ingrese el número de teléfono del usuario (10 dígitos): ")
+    while len(phone_number) != 10:
+        print("El número de teléfono debe tener 10 dígitos.")
+        phone_number = input("Ingrese el número de teléfono del usuario nuevamente: ")
+
+    email = input("Ingrese el correo electrónico del usuario: ")
+    while len(email) < 5 or len(email) > 50:
+        print("El correo electrónico debe tener una longitud mínima de 5 caracteres y máxima de 50.")
+        email = input("Ingrese el correo electrónico del usuario nuevamente: ")
+
+    # Generar el identificador único
+    identificador = i + 1
+
+    # Agregar el usuario y el identificador al listado
+    usuarios.append({
+        "Identificador": identificador,
+        "Nombre": name,
+        "Apellidos": last_name,
+        "Teléfono": phone_number,
+        "Correo electrónico": email
+    })
+    identificadores.append(identificador)
+
+print("\nUsuarios registrados:")
+for usuario in usuarios:
+    print(usuario)
+
+print("\nIdentificadores de usuarios registrados:")
+print(identificadores)
 
